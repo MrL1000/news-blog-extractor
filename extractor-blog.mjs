@@ -84,7 +84,7 @@ function validarEsquemaUrl(url) {
 
 /**
  * @openapi
- * /ip-extractor:
+ * /extractor-blog:
  *   post:
  *     summary: Extrae contenido de un artículo web
  *     requestBody:
@@ -151,5 +151,6 @@ app.post('/extractor-blog', async (req, res) => {
 
 // Iniciar el servidor
 app.listen(port, () => {
-  console.log(`Api corriendo en http://localhost:${port}`);
+  //console.log(`Api corriendo en http://localhost:${port}`);
+  console.log(`Api corriendo...`);
 });

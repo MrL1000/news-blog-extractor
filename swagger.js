@@ -10,10 +10,14 @@ const options = {
       description: 'API para extraer contenido de artículos web',
     },
     servers: [
-      {
-        url: 'http://localhost:3003',
-        description: 'Servidor local'
-      },
+        {
+            url: 'https://news-blog-extractor.onrender.com',
+            description: 'Servidor Desarrollo'
+        },
+        {
+            url: 'http://localhost:3003',
+            description: 'Servidor local'
+        } 
     ],
   },
   apis: ['./extractor-blog.mjs'], 
