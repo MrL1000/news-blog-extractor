@@ -4,6 +4,8 @@
     "@extractus/article-extractor": "^8.0.4",
     "@postlight/mercury-parser": "^2.2.1",
     "express": "^4.18.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
     "validator": "^13.12.0"
   }
 }

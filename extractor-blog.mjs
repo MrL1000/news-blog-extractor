@@ -5,12 +5,15 @@ import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import validator from 'validator';
+import swaggerSetup from './swagger.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const app = express();
 const port = 3003;
+
+swaggerSetup(app);
 
 app.use(express.json());
 
@@ -78,6 +81,30 @@ function validarEsquemaUrl(url) {
 }
 
 // Endpoint para extraer artículos
+
+/**
+ * @openapi
+ * /ip-extractor:
+ *   post:
+ *     summary: Extrae contenido de un artículo web
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               url:
+ *                 type: string
+ *                 description: URL del artículo a extraer
+ *     responses:
+ *       200:
+ *         description: Contenido extraído exitosamente
+ *       400:
+ *         description: URL inválida o faltante
+ *       500:
+ *         description: Error al procesar la URL
+ */
 app.post('/extractor-blog', async (req, res) => {
   const { url } = req.body;
 
